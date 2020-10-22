@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="res/css/style.css">
     <script src="res/js/script.js"></script>
+    <script src="res/js/user.js"></script>
     <title>postIt! Just Post It</title>
   </head>
   <body>
@@ -16,16 +17,15 @@
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
         </div>
-
-
-        <div class="avatar-container" onclick="myFunction()">
+        <div class="avatar-container">
+          <img src="res/images/avatar.png" class="avatar" alt="Me" onclick="myFunction()">
           <div class="dropdown-content" id="myDropdown">
-          <img src="res/images/avatar.png" class="avatar" alt="Me">
-            <a href="signup.php" style="color: white;">Signup</a>
-            <a href="#" style="color: white;">Info</a>
-            <a href="#" style="color: white;">Last news</a>
+            <p id="email"></p>
+            <a href="browse.html" > Browse</a>
+            <a href="login.html">Log Out</a>
+          </div>
         </div>
-        </div>
+
         </div>
       </nav>
     </header>

@@ -202,58 +202,36 @@ nav div.avatar-container {
 .like-button.liked {
     background-color: #01579b;
 }
-.dropdown {
-    float: right;
-    margin-right: 115px;
-    overflow: hidden;
-}
 
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: #ff0000;
-    font-family: inherit;
-    margin: 0;
-}
 
-.dropbtn:hover {
+
+.avatar:hover {
     cursor: pointer;
 }
 
-.dropdown:hover {
-    background-color: #ff7b7b;
-    text-decoration: none;
-}
+
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ff0000 !important;
+    background-color: #ffffff !important;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-height: 160px;
     z-index: 1;
-    -webkit-transition: opacity .3s ease-in;
-    -moz-transition: opacity .3s ease-in;
-    -o-transition: opacity .3s ease-in;
-    transition: opacity .3 ease-in;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align: left;
 }
 
 .dropdown-content a {
     float: none;
-    color: black;
     padding: 14px 16px;
-    text-decoration: none;
     display: block;
-}
+    border-top: 1px solid grey;
 
-.dropdown-content a:hover {
-    background-color: #ff7b7b;
 }
 
 .show {
     display: block;
     z-index: 11;
 }
+
