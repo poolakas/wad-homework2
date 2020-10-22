@@ -2,14 +2,14 @@ $(function () {
 
     loadUserInfo()
         .then(function (response) {
-            let user = new User(
+            let User = new user(
                 response.email
             );
 
-            displayUserInfo(user)
+            displayUserInfo(User)
         })
         .catch(function () {
-            console.log('Error loading user info')
+            console.log('Error loading User info')
         });
 });
 function myFunction() {
@@ -21,7 +21,7 @@ window.onclick = function(event) {
         var i;
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            $("p").text("EEEE")
+            $("p").text(displayUserInfo(user))
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
@@ -42,6 +42,7 @@ function loadUserInfo() {
         }
     );
 }
-function displayUserInfo(user) {
-    $('#dropdown-content #email').text(user.email);
+function displayUserInfo(User) {
+    console.log("siin")
+    $('#myDropdown #email').text(User.email);
 }
