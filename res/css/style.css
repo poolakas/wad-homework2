@@ -214,6 +214,7 @@ nav div.avatar-container {
 .dropdown-content {
     display: none;
     position: absolute;
+    right: 20px;
     background-color: #ffffff !important;
     min-width: 160px;
     min-height: 180px;
@@ -251,7 +252,13 @@ nav div.avatar-container {
 .follow-button.followed {
     background-color: white;
     color: purple;
-    border: purple;
-    border-width: 500px;
     
+}
+
+.profile {
+    width: 40%;
+    margin: 15px auto;
+    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+    border-radius: 5px;
+
 }
