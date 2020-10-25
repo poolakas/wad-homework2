@@ -96,9 +96,6 @@ function displayPosts() {
     
 }
 
-function loadProfiles() { 
-    
-}
 
 function followFunction(profile_id) {
     let profileID = ["#one", "#two", "#three", "#four"]
