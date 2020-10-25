@@ -96,10 +96,7 @@ function displayPosts() {
     
 }
 
-function loadProfiles() {
-    for (let profile of profiles) {
-        $('#profile_pic').attr("src", profile.avatar);
-    }
+function loadProfiles() { 
     
 }
 
