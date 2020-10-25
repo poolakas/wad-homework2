@@ -250,7 +250,7 @@ nav div.avatar-container {
 }
 
 .follow-button.followed {
-    background-color: white;
+    background-color: gray;
     color: purple;
     
 }
