@@ -5,7 +5,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="res/css/style.css">
-    <script src="res/js/user.js"></script>
+    <script src="res/js/user.js"></script> 
+    <script src="res/js/Post.js"></script> 
     <script src="res/js/script.js"></script>
     <title>postIt! Just Post It</title>
   </head>
@@ -19,9 +20,10 @@
           <input type="text" name="search"><button type="button">Search</button>
         </div>
         <div class="avatar-container">
-          <img src="res/images/avatar.png" class="avatar" alt="Me" onclick="myFunction()">
+          <img id="my_avatar" class="avatar" alt="Me" onclick="myFunction()">
           <div class="dropdown-content" id="myDropdown">
-            <p id="email"> EMAIL</p>
+            <p id="name"></p>
+            <p id="email"></p>
             <a href="browse.html" > Browse</a>
             <a href="login.html">Log Out</a>
           </div>
@@ -31,58 +33,78 @@
       </nav>
     </header>
 
-    <section class="main-container">
-      <div class="post">
+    <section class="main-container" id="main-container">
+      
+      <div class="post" id="one">
         <div class="post-author">
           <span class="post-author-info">
-            <img src="res/images/avatar.png" alt="Post author">
-            <small>John Doe</small>
+            <img id="avatar">
+            <small id="author"></small>
           </span>
-          <small>Sep 18, 2020 15:16</small>
+          <small id="createTime"></small>
         </div>
         <div class="post-image">
-          <img src="res/images/posts/1.jpg" alt="">
+          <img id="media" alt="">
         </div>
         <div class="post-title">
-          <h3>I think it's going to rain</h3>
+          <h3 id="text"></h3>
         </div>
         <div class="post-actions">
-          <button type="button" name="like" class="like-button">100k</button>
+          <button type="button" name="like" class="like-button" id="likes"></button>
         </div>
       </div>
 
-      <div class="post">
+      <div class="post" id="two">
         <div class="post-author">
           <span class="post-author-info">
-            <img src="res/images/avatar.png" alt="Post author">
-            <small>John Doe</small>
+            <img id="avatar" alt="Post author">
+            <small id="author"></small>
           </span>
-          <small>Sep 18, 2020 15:16</small>
+          <small id="createTime"></small>
         </div>
         <div class="post-title">
-          <h3>Which weighs more, a pound of feathers or a pound of bricks?</h3>
+          <h3 id="text"></h3>
         </div>
         <div class="post-actions">
           <button type="button" name="like" class="like-button">15k</button>
         </div>
       </div>
 
-      <div class="post">
+      <div class="post" id="three">
         <div class="post-author">
           <span class="post-author-info">
-            <img src="res/images/avatar.png" alt="Post author">
-            <small>John Doe</small>
+            <img id="avatar" alt="Post author">
+            <small id="author"></small>
           </span>
-          <small>Sep 18, 2020 17:18</small>
+          <small id="createTime"></small>
         </div>
         <div class="post-image">
-          <img src="res/images/posts/2.jpg" alt="">
+          <img id="media" alt="">
         </div>
         <div class="post-title">
-          <h3>Felt cute, might delete later</h3>
+          <h3 id="text"></h3>
         </div>
         <div class="post-actions">
-          <button type="button" name="like" class="like-button liked">10k</button>
+          <button type="button" name="like" class="like-button liked" id="likes"></button>
+        </div>
+      </div>
+
+      <div class="post" id="four">
+        <div class="post-author">
+          <span class="post-author-info">
+            <img id="avatar" alt="Post author">
+            <small id="author"></small>
+          </span>
+          <small id="createTime"></small>
+        </div>
+        <div class="post-image">
+          <video id="media" alt="">
+        </div>
+        <div class="post-title">
+          <h3 id="text"></h3>
+        </div>
+        <div class="post-actions">
+          <button type="button" name="like" class="like-button" id="likes"></button>
         </div>
       </div>
 

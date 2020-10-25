@@ -1,15 +1,35 @@
-$(function () {
+let posts = []
 
+$(function () {
     loadUserInfo()
         .then(function (response) {
-            let User = new user(
-                response.email
+            let user = new User(
+                response.firstname,
+                response.lastname,
+                response.email,
+                response.avatar
+            
             );
 
-            displayUserInfo(User)
+            displayUserInfo(user)
+            $('#my_avatar').attr("src", user.avatar)
         })
         .catch(function () {
-            console.log('Error loading User info')
+            console.log('Error loading user info')
+        });
+
+    loadPosts()
+        .then(function (response) {
+            for (let post of response) {
+                posts.push(new Post(post.id, post.author,
+                     post.createTime, post.text, post.media
+                     ,post.likes))
+            }
+
+            displayPosts()
+        })
+        .catch(function () {
+            console.log('Error loading user info')
         });
 });
 function myFunction() {
@@ -28,11 +48,38 @@ window.onclick = function(event) {
         }
     }
 }
+function displayUserInfo(user) {
+    $('#myDropdown #name').text(user.firstname + " " + user.lastname);
+    $('#myDropdown #email').text(user.email);
+}
+function displayPosts() {
+    let postID = ["#one", "#two", "#three", "#four"]
+
+    for (let post of posts) {
+        $(postID[parseInt(post.id)-1] + ' #author').text(post.author.firstname + ' ' + post.author.lastname);
+        $(postID[parseInt(post.id)-1] + ' #avatar').attr("src", post.author.avatar);
+        $(postID[parseInt(post.id)-1] + ' #createTime').text(post.createTime);
+        $(postID[parseInt(post.id)-1] + ' #likes').text(post.likes);
+        if(post.text !== null) {
+            $(postID[parseInt(post.id)-1] + ' #text').text(post.text);
+        }
+        
+        if(post.media !== null) {
+            if (post.media.type == "image") {
+                $(postID[parseInt(post.id)-1] + ' #media').attr("src", post.media.url);
+            }
+            if (post.media.type == "video") {
+                $(postID[parseInt(post.id)-1] + ' #media').attr("src", post.media.url);
+            }
+        }
+    }
+    
+}
 
 function loadUserInfo() {
     return $.get(
         {
-            url: 'data/user.json',
+            url: 'https://private-anon-49292198e5-wad20postit.apiary-mock.com/users/1',
             success: function (response) {
                 return response;
             },
@@ -42,7 +89,18 @@ function loadUserInfo() {
         }
     );
 }
-function displayUserInfo(User) {
-    console.log("siin")
-    $('#myDropdown #email').text(User.email);
+
+function loadPosts() {
+    return $.get(
+        {
+            url: 'https://private-anon-49292198e5-wad20postit.apiary-mock.com/posts',
+            success: function (response) {
+                return response;
+            },
+            error: function () {
+                console.log('error')
+            }
+        }
+    );
 }
+
