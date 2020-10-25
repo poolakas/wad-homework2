@@ -214,6 +214,8 @@ nav div.avatar-container {
 .dropdown-content {
     display: none;
     position: absolute;
+
+    
     background-color: #ffffff !important;
     min-width: 160px;
     min-height: 180px;
