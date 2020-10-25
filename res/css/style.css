@@ -214,8 +214,6 @@ nav div.avatar-container {
 .dropdown-content {
     display: none;
     position: absolute;
-
-    
     background-color: #ffffff !important;
     min-width: 160px;
     min-height: 180px;
@@ -237,3 +235,23 @@ nav div.avatar-container {
     z-index: 11;
 }
 
+.follow-button {
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-color:purple;
+    width: 120px;
+    height: 30px;
+    padding-left: 23px;
+    line-height: 10px;
+    text-align: center;
+    border: none;
+}
+
+.follow-button.followed {
+    background-color: white;
+    color: purple;
+    border: purple;
+    border-width: 500px;
+    
+}
