@@ -96,11 +96,20 @@ function displayPosts() {
     
 }
 
+function displayProfiles() {
+    var i = 0
+    let profileID = ["#one", "#two", "#three", "#four"]
+    for (let profile of profiles) {
+        $(profileID[i] + '#author').text(profile.firstname + ' ' + profile.lastname)
+        $(profileID[i] + '#author').attr('src', profile.avatar)
+    }
+}
 
 function followFunction(profile_id) {
     let profileID = ["#one", "#two", "#three", "#four"]
     $(profileID[profile_id-1] + ' #follow').toggleClass('followed').text('Followed')
 }
+
 
 function loadUserInfo() {
     return $.get(
