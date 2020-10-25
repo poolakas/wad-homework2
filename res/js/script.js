@@ -48,6 +48,12 @@ window.onclick = function(event) {
         }
     }
 }
+
+function likeFunction(post_id) {
+    let postID = ["#one", "#two", "#three", "#four"]
+    $(postID[post_id-1] + ' #likes').toggleClass('liked')
+}
+
 function displayUserInfo(user) {
     $('#myDropdown #name').text(user.firstname + " " + user.lastname);
     $('#myDropdown #email').text(user.email);
